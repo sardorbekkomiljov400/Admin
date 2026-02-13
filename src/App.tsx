@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Context } from "./context/Context"
-import {AuthRoute , DashboardRoute} from "./routes"
+import { AuthRoute, DashboardRoute } from "./routes"
 
 const App = () => {
   const { token } = useContext(Context)

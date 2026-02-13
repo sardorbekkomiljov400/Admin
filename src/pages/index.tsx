@@ -1,8 +1,8 @@
-import Login from "./Auth/login"
-import Register from "./Auth/Register"
-import Home from "./Dashbord/Home"
-import Category from "./Dashbord/Category"
-import Products from "./Dashbord/Products"
-import NotFound from "./NotFound"
+import Login from "./Auth/login";
+import Register from "./Auth/Register";
+import Home from "./Dashbord/Home";
+import Products from "./Dashbord/Products";
+import Category from "./Dashbord/Category";
+import NotFound from "./NotFound";
 
-export {Login ,Register ,Home , Category , Products , NotFound}
+export { Login, Register, Home, Products, Category, NotFound }

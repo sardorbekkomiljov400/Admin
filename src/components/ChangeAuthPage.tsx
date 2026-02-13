@@ -3,7 +3,7 @@ import PATH from "./Path"
 import { Link } from "react-router-dom"
 
 interface ChangeAuthPageType {
-  title: "Tizimga" | "Hisobingizni yo'qmi?"
+  title: "Tizimga" | "Hisobingiz yo'qmi?"
 }
 
 const ChangeAuthPage: FC<ChangeAuthPageType> = ({ title }) => {

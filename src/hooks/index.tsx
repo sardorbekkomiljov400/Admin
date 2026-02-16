@@ -1,3 +1,3 @@
 import instance from "./instance";
-
-export {instance}
+import debounce from "./debounce";
+export {instance , debounce}

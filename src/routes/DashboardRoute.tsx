@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { PATH } from "../components"
-import { Category, Home, NotFound, Products } from "../pages"
+import { Category, Home, NotFound, Products , ProductCrud , ProductMore } from "../pages"
 import { Header, SiteBar } from "../modules"
 
 const DashboardRoute = () => {
@@ -9,6 +9,11 @@ const DashboardRoute = () => {
     { id: 2, path: PATH.products, element: <Products /> },
     { id: 3, path: PATH.category, element: <Category /> },
     { id: 4, path: PATH.notFound, element: <NotFound /> },
+    { id: 5, path: PATH.notFound, element: <ProductCrud/> },
+    { id: 6, path: PATH.notFound, element: <ProductMore/> },
+    { id: 7, path: PATH.notFound, element: <ProductCrud/> },
+    
+
   ]
 
   return (
@@ -18,9 +23,7 @@ const DashboardRoute = () => {
         <Header />
         <Routes>
           {dashboardList.map(item => (
-            <Route key={item.id} path={item.path} element={item.element} />
-          ))}
-        </Routes>
+            <Route key={item.id} path={item.path} element={item.element} />))}</Routes>
       </div>
     </div>
   )

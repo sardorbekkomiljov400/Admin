@@ -29,8 +29,8 @@ const Products = () => {
     <div className="p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-7.5">
-          <Input  setLoading={setLoading}  setValue={setSearchValue}  extraClass="!bg-slate-200 !py-3.5 !text-black !w-[300px]"  name="search"  placeholder="Qidirish"  type="text" />
-          <Select  setLoading={setLoading} setValue={setCategoryId} list={categoryList} extraClass="!bg-slate-200 !text-black !w-[300px]"/>
+          <Input value={searchValue}  setLoading={setLoading}  setValue={setSearchValue}  extraClass="!bg-slate-200 !py-3.5 !text-black !w-[300px]"  name="search"  placeholder="Qidirish"  type="text" />
+          <Select value={categoryId} setLoading={setLoading} setValue={setCategoryId} list={categoryList} extraClass="!bg-slate-200 !text-black !w-[300px]"/>
         </div>
         <Button onClick={() => navigate(PATH.productsCreate)} extraClass="!w-[100px]" type="button">Create</Button>
       </div>

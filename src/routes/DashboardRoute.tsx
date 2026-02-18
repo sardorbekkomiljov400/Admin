@@ -8,17 +8,17 @@ const DashboardRoute = () => {
     { id: 1, path: PATH.home, element: <Home /> },
     { id: 2, path: PATH.products, element: <Products /> },
     { id: 3, path: PATH.category, element: <Category /> },
+    { id: 5, path: PATH.productsCreate, element: <ProductCrud/> },
+    { id: 6, path: PATH.productsMore, element: <ProductMore/> },
+    { id: 7, path: PATH.productsCreate, element: <ProductCrud/> },
     { id: 4, path: PATH.notFound, element: <NotFound /> },
-    { id: 5, path: PATH.notFound, element: <ProductCrud/> },
-    { id: 6, path: PATH.notFound, element: <ProductMore/> },
-    { id: 7, path: PATH.notFound, element: <ProductCrud/> },
     
 
   ]
 
   return (
     <div className="flex">
-      <SiteBar />
+      <SiteBar /> 
       <div className="w-[78%] h-screen overflow-y-auto">
         <Header />
         <Routes>

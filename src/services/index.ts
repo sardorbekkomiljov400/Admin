@@ -37,6 +37,28 @@ export const RegisterFn = (evt:SubmitEvent<HTMLFormElement> , setLoading:Dispatc
   }).catch(() => toast.error("Xatolik bor!")).finally(() => setLoading(false))
 }
 
+
+export const CrudFn = (
+    URL: string, 
+    data: any, 
+    navigate: NavigateFunction, 
+    setLoading: Dispatch<SetStateAction<boolean>>, 
+    id: string | undefined
+) => {
+    setLoading(true);
+    if (id) {
+        instance.put(`${URL}/${id}`, data).then(() => {
+            toast.success("Muvaffaqiyatli o'zgartirildi");
+            setTimeout(() => navigate(-1), 1000);
+        }).catch(() => toast.error("Xatolik bor!")).finally(() => setLoading(false));
+    } else {
+        instance.post(URL, data).then(() => {
+            toast.success("Muvaffaqiyatli qo'shildi");
+            setTimeout(() => navigate(-1), 1000);
+        }).catch(() => toast.error("Xatolik bor!")).finally(() => setLoading(false));
+    }
+};
+
  
 
  

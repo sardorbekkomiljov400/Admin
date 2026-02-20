@@ -1,6 +1,5 @@
 import { useContext, useState, type SubmitEvent } from "react";
 import { AuthFormItem, Button, ChangeAuthPage, SiteLogo } from "../../components";
-import { Toaster } from "react-hot-toast";
 import { Context } from "../../context/Context";
 import {LoadingImg} from "../../assets/images";
 import { LoginFn } from "../../services";
@@ -12,7 +11,6 @@ const {setToken} = useContext(Context)
 const handleLoginSubmit = (evt:SubmitEvent<HTMLFormElement>) => LoginFn(setLoading, evt, setToken)
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100">
-      <Toaster position="top-center" reverseOrder={false} />
       <div className="mx-auto flex min-h-screen max-w-6xl items-center justify-center px-4">
         <div className="w-full max-w-md">
           {/* Header */}

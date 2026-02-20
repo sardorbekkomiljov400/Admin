@@ -3,8 +3,11 @@ import type { ProductsType } from "../@types"
 import { EllipsisVertical, ThumbsUp } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import PATH from "./Path"
+import { useDispatch } from "react-redux"
+import { collectLikeProducts } from "../store/LikeSlice"
 
 const ProductCard: FC<{ item: ProductsType }> = ({ item }) => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const erroImg = "https://cdn.iconscout.com/illustration/premium/thumb/sorry-item-not-found-illustration-svg-download-png-2809510.png"
 
@@ -17,7 +20,7 @@ const ProductCard: FC<{ item: ProductsType }> = ({ item }) => {
         <span  onClick={() => navigate(PATH.productsMore.replace(":id", String(item.id)))}  className="absolute cursor-pointer top-3 right-3 text-xs p-1 rounded-full hover:bg-indigo-600 duration-300 bg-indigo-500/30 text-indigo-300 border border-indigo-400/20">
           <EllipsisVertical size={15} />
         </span>
-        <span className="absolute top-10 right-3 text-xs p-1 rounded-full cursor-pointer hover:bg-red-600 duration-300 text-gray-300 bg-red-360 border border-red-400/98">
+        <span onClick={() => dispatch(collectLikeProducts(item))} className="absolute top-10 right-3 text-xs p-1 rounded-full cursor-pointer hover:bg-red-600 duration-300 text-gray-300 bg-red-360 border border-red-400/98">
           <ThumbsUp size={15} />
         </span>
       </div>
